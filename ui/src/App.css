@@ -1,0 +1,68 @@
+#root {
+  display: flex !important;
+  flex-direction: column;
+  height: 100%;
+  height: 100vh;
+}
+
+.App-Body {
+  overflow: auto;
+  overflow-x: hidden;
+  flex: 1;
+}
+
+.is-height-0 {
+  height: 0;
+}
+
+.is-size-8 {
+  font-size: 0.65rem !important;
+}
+
+.is-flex-centered {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.is-fullheight {
+  height: 100%;
+}
+
+.has-text-info {
+  color: #0e76a8;
+}
+
+.is-atleast-fullheight {
+  min-height: 100%;
+}
+
+.panel.is-atleast-fullheight {
+  margin-bottom: 0.5em;
+}
+
+.footer {
+  background-color: inherit;
+  padding: 1rem 1rem 1.2rem;
+  font-size: 0.8em;
+  color: #888;
+}
+
+@media screen and (max-width: 1023px) {
+  .navbar-item.is-active.is-tab {
+    border-bottom-color: transparent;
+    border-bottom-width: 0;
+    border-left-width: 0.5em;
+    border-left-color: #3273dc;
+    border-left-style: solid;
+  }
+  .navbar-menu {
+    height: 100%;
+    overflow: auto;
+  }
+}
+
+.navbar-item .button.is-rounded {
+  border-radius: 8em;
+  padding: 0.8em;
+}

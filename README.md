@@ -3,6 +3,8 @@
 ## Description
 Implementation of a wallet System
 
+![Wallet system workflow](./animation.gif)
+
 ## Technical Details
 This is a mono-repo project for a wallet system. It uses nodejs for the server (`lendsqr` folder) and has aReact frontend (`ui` folder).
 

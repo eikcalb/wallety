@@ -8,7 +8,7 @@ module.exports = async (req, res) =>
             req.userData.id,
             req.body.recipient?.trim(),
             req.body.amount,
-            req.body.narration?.trim() ?? "Funds transfer")
+            req.body.narration?.trim() || "Funds transfer")
 
         res.json({ message: 'Transfer completed successfully', balance })
     } catch (e)

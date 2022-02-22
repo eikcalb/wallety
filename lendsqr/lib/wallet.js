@@ -189,7 +189,11 @@ class Wallet
             throw new Error('Recipient does not exist')
         }
         const [recipient] = fetchedrecipients
-
+        if (recipient.id === userID)
+        {
+            console.log(`${reference}: ${recipient.id} attempt to make same account transfer`)
+            throw new Error('Cannot make transfers to your account')
+        }
         await database.db.transaction(async txn =>
         {
             const senderWallet = await txn('wallet')
@@ -246,7 +250,7 @@ class Wallet
                     lastTransactionReference: reference,
                 })
 
-            console.info(`${reference}: Successfully processed transfer for ${userID} to ${recipient.username} with ${amount}`)
+            console.info(`${reference}: Successfully processed transfer for ${userID} to ${recipient.username} (${recipient.id}) with ${amount}`)
         })
 
         return updatedBalance

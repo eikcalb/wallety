@@ -7,7 +7,7 @@ module.exports = async (req, res) =>
         const balance = await wallet.Withdraw(
             req.userData.id,
             req.body.amount,
-            req.body.narration?.trim() ?? "Funds withdrawal")
+            req.body.narration?.trim() || "Funds withdrawal")
 
         res.json({ message: 'Withdrawal completed successfully', balance })
     } catch (e)

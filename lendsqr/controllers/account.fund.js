@@ -7,7 +7,7 @@ module.exports = async (req, res) =>
         const balance = await wallet.Fund(
             req.userData.id,
             req.body.amount,
-            req.body.narration?.trim() ?? "Funds deposit")
+            req.body.narration?.trim() || "Funds deposit")
 
         res.json({ message: 'Funding completed successfully', balance })
     } catch (e)

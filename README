@@ -6,6 +6,9 @@ Implementation of a wallet System
 ## Technical Details
 This is a mono-repo project for a wallet system. It uses nodejs for the server (`lendsqr` folder) and has aReact frontend (`ui` folder).
 
+### Server
+The server runs on express and is only an API. It is not being used to serve the web assets. This design is to enable isolation of concerns and allow the server.
+
 ### API
 The server exposes the following endpoints which are consumed by the application
 | Endpoint        | Description                                            | Method |
@@ -16,7 +19,6 @@ The server exposes the following endpoints which are consumed by the application
 | `/account/fund` | Used to add funds into an account                      | POST   |
 | `/account/withdraw` | Used to remove funds from an account                      | POST   |
 | `/account/transfer` | Used to transfer funds between users                      | POST   |
-
 
 ### How to run
 
@@ -30,6 +32,7 @@ In order to run the application, make sure you have nodejs installed on your mac
     DB_DATABASE=lendsqr
     ```
 - Enter into the server folder and run `npm install` to install the required dependencies.
+- You will need to [install Knex](https://knexjs.org/#Migrations) and run the migration using `knex migrate:latest`.
 - Run `npm start` to start the server.
 - In the `ui` folder, install all dependencies suing `npm install`.
   - In order to build the frontend project, you need typescript. You can find more info on how to download typescript [here](https://www.typescriptlang.org/download)
